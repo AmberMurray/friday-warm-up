@@ -19,3 +19,7 @@ http POST https://longherokupathstringgoeshere.herokuapp.com/ phrase="test phras
 
 // note: in your app.js, whenever you do a ".send" you can only have 1 parameter
 // note: you can always add curly braces to make everything you want to send into an object
+// heroku logs will show what's going on with their copy of your server
+// node app.js (assuming app.js is your server file) will do ???
+// whenever you hit enter or refresh in the browser, you are making a GET request
+
