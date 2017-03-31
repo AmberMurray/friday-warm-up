@@ -1,15 +1,16 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+const rp = require('request-promise')
 const data = require('./data')
 const port = process.env.PORT || 3000
 const path = require('path')
 
+
 app.use(bodyParser.json())
 
-app.get('/', connected)
 app.get('/data', sayHello)
-app.post('/data', addData)
+app.post('/', addData)
 
 app.listen(port, () => {
   console.log(`Friday Warm Up API on ${port}!!!!!!!`);
@@ -23,18 +24,13 @@ app.listen(port, () => {
 
 
 
-
-
-function connected () {
-  res.send('you are connected');
-}
-
 function sayHello (req, res) {
   res.send('Hello');
 }
 
 function addData (req, res) {
-  let url = req.body
-  console.log(url);
-  res.json('You posted')
+  let phrase = req.body.phrase
+  let phraseLength = phrase.length
+  console.log(phrase, phraseLength)
+  res.send(phrase, phraseLength)
 }
