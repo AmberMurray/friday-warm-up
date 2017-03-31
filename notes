@@ -1,0 +1,21 @@
+make sure your package.json has a start script
+
+"scripts": {
+"start": node app.js
+}
+
+git add .
+git commit -m "comment"
+
+heroku create (at the command line - it will generate a name for you)
+git remote -v to see the url (the "remote" part is the location)
+git push heroku master
+heroku open
+
+
+to test the deployed url...
+http POST https://longherokupathstringgoeshere.herokuapp.com/ phrase="test phrase"
+
+
+note: in your app.js, whenever you do a ".send" you can only have 1 parameter
+note: you can always add curly braces to make everything you want to send into an object
